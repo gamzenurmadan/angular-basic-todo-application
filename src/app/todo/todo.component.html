@@ -1,0 +1,66 @@
+<div class="container-fluid">
+  <div class="row">
+    <div style="background-color: #E89E5D; height: 93vh;" class="col-md-3">
+        <div>
+            <mat-card class="mt-3">
+                <form [formGroup]="todoForm">
+                    <mat-form-field appearance="outline">
+                        <mat-label>What to do today?</mat-label>
+                        <input formControlName="item" matInput placeholder="Add a task">
+                        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                        
+                    </mat-form-field>
+                    <button mat-raised-button [disabled] = "todoForm.invalid" color="primary">Add Task</button>
+                </form>
+            </mat-card>
+        </div>
+    </div>
+
+    <div class="col-md-9">
+        <div cdkDropListGroup>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="example-container">
+                        <h3>To do</h3>
+                    
+                        <div
+                          cdkDropList
+                          [cdkDropListData]="tasks"
+                          class="example-list"
+                          (cdkDropListDropped)="drop($event)">
+                          <div class="example-box" *ngFor="let item of tasks" cdkDrag>{{item}}
+                            
+                          </div>
+                        </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="example-container">
+                        <h3>In Progress</h3>
+                    
+                        <div
+                          cdkDropList
+                          [cdkDropListData]="tasks"
+                          class="example-list"
+                          (cdkDropListDropped)="drop($event)">
+                          <div class="example-box" *ngFor="let item of tasks" cdkDrag>{{item}}</div>
+                        </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="example-container">
+                        <h3>Done</h3> 
+                        <div
+                          cdkDropList
+                          [cdkDropListData]="tasks"
+                          class="example-list"
+                          (cdkDropListDropped)="drop($event)">
+                          <div class="example-box" *ngFor="let item of tasks" cdkDrag>{{item}}</div>
+                        </div>
+                </div>
+            </div>
+
+          
+
+        </div>    
+    </div>
+  </div>
+</div>
