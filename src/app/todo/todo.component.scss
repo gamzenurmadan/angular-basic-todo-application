@@ -1,3 +1,4 @@
+
 :host .mat-form-field{
     width: 100%;
 }
@@ -57,3 +58,29 @@
     transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
   }
   
+  .box{
+    display: grid;
+    grid-auto-flow: coloumn;
+  }
+
+
+  .head-title{
+    margin:0;
+    padding: 0;
+    background-color: antiquewhite;
+    border-radius: 4px;
+    color: #4E7796;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    font-family: 'yeseva one', sans-serif;
+    span{
+      font-weight: normal;
+    }
+  }
+
+  .first-img{
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+  }
