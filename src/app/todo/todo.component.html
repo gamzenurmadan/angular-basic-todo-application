@@ -1,20 +1,18 @@
 <div class="container-fluid">
   <div class="row">
-    <div style="background-color: #4A4D78; height: 93vh;" class="col-md-3">
-        <div>
-            <mat-card class="mt-3">
-                <form [formGroup]="todoForm">
-                    <mat-form-field appearance="outline">
-                        <mat-label>What to do today?</mat-label>
-                        <input formControlName="item" matInput placeholder="Add a task">
-                        
-                        
-                    </mat-form-field>
-                    <button *ngIf="!isEditEnabled" (click)="addTask()" mat-raised-button [disabled] = "todoForm.invalid" color="primary">Add Task</button>
-                    <button *ngIf="isEditEnabled" (click)="updateTask()" mat-raised-button [disabled] = "todoForm.invalid" color="primary">Update</button>
-                </form>
-            </mat-card>
-        </div>
+    <div class="todo-container col-md-3"> 
+        <mat-card class="mt-3">
+            <form [formGroup]="todoForm">
+                <mat-form-field appearance="outline">
+                    <mat-label>What to do today?</mat-label>
+                    <input formControlName="item" matInput placeholder="Add a task">
+                    
+                    
+                </mat-form-field>
+                <button *ngIf="!isEditEnabled" (click)="addTask()" mat-raised-button [disabled] = "todoForm.invalid" color="primary">Add Task</button>
+                <button *ngIf="isEditEnabled" (click)="updateTask()" mat-raised-button [disabled] = "todoForm.invalid" color="primary">Update</button>
+            </form>
+        </mat-card>
         <img src="../../assets/images/flower.png" class="first-img">
     </div>
 
